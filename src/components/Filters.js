@@ -1,6 +1,8 @@
 import React from 'react'
-import StarIcon from '@material-ui/icons/Star';
-import SvgIcon from '@material-ui/core/SvgIcon';
+import 'css/Filter.css'
+// import StarIcon from '@material-ui/icons/Star';
+// import SvgIcon from '@material-ui/core/SvgIcon';
+
 
 const Filters = () => {
     return (
@@ -8,6 +10,7 @@ const Filters = () => {
             <h2>Filters</h2>
 
             <div className="filter-options">
+
                 <fieldset>
                     <legend>Colour</legend>
                     <ul className="filter-list">
@@ -37,57 +40,18 @@ const Filters = () => {
                         <li><input type="checkbox" name="size" value="14" id="14" /> <label for="14">14</label></li>
                     </ol>
                 </fieldset>
-                
-                <fieldset>
-                    <legend>Ratings</legend>
-                    <div className="rating">
-                        <input type="radio" id="star4" name="star" value="4" /> <label for="star4">
-                        <StarIcon aria-label="Star">
-                            <SvgIcon>
-                                <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
-                            </SvgIcon>
-					    </StarIcon> 
-                        </label>
-                        <input type="radio" id="star5" name="star" value="5" /> <label for="star5">
-                        <StarIcon aria-label="Star">
-                            <SvgIcon>
-                                <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
-                            </SvgIcon>
-					    </StarIcon>
-                        </label>
-                        <input type="radio" id="star3" name="star" value="3" /> <label for="star3">
-                        <StarIcon aria-label="Star">
-                            <SvgIcon>
-                                <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
-                            </SvgIcon>
-					    </StarIcon>
-                        </label>
-                        <input type="radio" id="star2" name="star" value="2" /> <label for="star2">
-                        <StarIcon aria-label="Star">
-                            <SvgIcon>
-                                <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
-                            </SvgIcon>
-					    </StarIcon>
-                        </label>
-                        <input type="radio" id="star1" name="star" value="1" /> <label for="star1">
-                        <StarIcon aria-label="Star">
-                            <SvgIcon>
-                                <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
-                            </SvgIcon>
-					    </StarIcon>
-                        </label>
-                    </div>
-                </fieldset>
-            </div>
 
-            <fieldset className="sort">
-            <label for="sort">Sort By</label>
-            <select name="sort" id="sort">
-                <option value="price-high">Price: High-Low</option>
-                <option value="price-low">Price: Low-High</option>
-                <option value="newest">Newest</option>
-            </select>
-            </fieldset>
+
+                <fieldset className="sort">
+                    <label for="sort">Sort By</label>
+                    <select name="sort" id="sort">
+                        <option value="price-high">Price: High-Low</option>
+                        <option value="price-low">Price: Low-High</option>
+                        <option value="newest">Newest</option>
+                    </select>
+                </fieldset>
+
+            </div>
         </form>
     )
 }

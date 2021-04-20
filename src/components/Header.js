@@ -1,4 +1,7 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
+import 'css/Header.css'
+
 import imglogo from 'img/logo-header.png'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
@@ -7,9 +10,10 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
 const Header = () => {
+
     return (
         <header className="page-header">
-			<a href="index.html" className="logo"> <img src={imglogo} alt="website logo" /></a>
+			<Link to="/" className="logo"> <img src={imglogo} alt="website logo" /> </Link>
 
 			<div className="nav-toggle">
 				<input type="checkbox" id="check-menu" checked />
@@ -22,11 +26,10 @@ const Header = () => {
 				</label>
 				<nav aria-label="Primary" className="navigation">
 					<ul className="menu">
-						<li><a href="#">Men</a></li>
-						<li><a href="#">Women</a></li>
-						<li><a href="#">Kids</a></li>
-						<li><a href="#">Brands</a></li>
-						<li><a href="#">Outlet</a></li>
+						<li><Link to="/">      Shop  </Link> </li>
+						<li><Link to="/men">   Men   </Link> </li>
+						<li><Link to="/women"> Women </Link> </li>
+						<li><Link to="/kids">  Kids  </Link> </li>
 					</ul>
 				</nav>
 			</div>
