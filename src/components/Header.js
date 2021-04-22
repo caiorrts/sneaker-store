@@ -1,4 +1,5 @@
-import React from 'react'
+//import React from 'react'
+import React, { useState } from 'react';
 import {Link} from 'react-router-dom'
 import 'css/Header.css'
 
@@ -9,18 +10,12 @@ import SearchIcon from '@material-ui/icons/Search';
 import MenuIcon from '@material-ui/icons/Menu';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
+
 const Header = () => {
 
-	//let find = useContext(SearchContext)
-	// let find = ""
+	let [searchText, setTxt] = useState()
 
-	// function getSearch(text) {
-	// 	console.log('TEXT: ', text)
-	// 	find = text
-	// }
-
-
-    return (
+	return (
         <header className="page-header">
 			<Link to="/" className="logo"> <img src={imglogo} alt="website logo" /> </Link>
 
@@ -44,15 +39,17 @@ const Header = () => {
 			</div>
 			
 
-			<form className="search">
+			<form className="search" id="search">
 				<label for="find" aria-label="Search"></label>
-				<input type="search" name="find" id="find" placeholder="Search..." onChange={event => getSearch(event.target.value)} />
-				<button type="submit" aria-label="findsubmit">
+				<input type="search" name="find" id="find" placeholder="Search..." onChange={() => setTxt(event.target.value)} onKeyPress={e => { if (e.key === 'Enter') e.preventDefault() }} />
+				<button type="button" aria-label="findsubmit" >
+				<Link to={`/search/${searchText}`}>
 					<SearchIcon aria-label="search">
 						<SvgIcon>
 							<path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
 						</SvgIcon>
 					</SearchIcon>
+				</Link>
 				</button>
 			</form>
 

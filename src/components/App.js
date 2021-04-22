@@ -48,7 +48,10 @@ const App = () => {
                         <Route path="/men">     <ProdListShop  type={"Men"}   />      </Route>
                         <Route path="/women">   <ProdListShop  type={"Women"} />      </Route>
                         <Route path="/kids">    <ProdListShop  type={"Kids"}  />      </Route>
-                        <Route path="/product/:slug"> <PageProduct /> </Route>
+                        <Route path="/search/:search" > <ProdListShop /> </Route>
+                        <Route path="/size/:size"     > <ProdListShop /> </Route>
+                        <Route path="/color/:color"   > <ProdListShop /> </Route>
+                        <Route path="/product/:slug"  > <PageProduct  /> </Route>
                         <Route path="*" component={Page404} />
                     </Switch>				
                 </main>
