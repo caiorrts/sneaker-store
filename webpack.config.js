@@ -41,6 +41,6 @@ module.exports = {
 		}
 	},
 	output: {
-		publicPath: `/`
+		publicPath: `auto`
 	}
 }
