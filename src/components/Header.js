@@ -11,7 +11,14 @@ import SvgIcon from '@material-ui/core/SvgIcon';
 
 const Header = () => {
 
-	
+	//let find = useContext(SearchContext)
+	// let find = ""
+
+	// function getSearch(text) {
+	// 	console.log('TEXT: ', text)
+	// 	find = text
+	// }
+
 
     return (
         <header className="page-header">
@@ -69,10 +76,6 @@ const Header = () => {
 
 		</header>
     )
-
-	function getSearch(text) {
-		console.log('TEXT: ', text)
-	}
 }
 
 export default Header

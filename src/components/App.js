@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import 'css/App.css'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {Database} from 'components/Context'
 
 import Header 		 from 'components/Header'
 import PageProduct 	 from 'components/PageProduct'
@@ -10,16 +11,6 @@ import Page404       from 'components/Page404'
 
 
 const App = () => {
-
-    //const searchText = React.createContext('OIIIII');
-
-    // const findName = document.getElementById('find')
-
-	// findName.addEventListener("change", () => {
-	// 	console.log('FIND: ', findName.value)
-	// })
-
-
 
     const [data, setData] = useState([]);
     const getData = () => {
@@ -42,30 +33,29 @@ const App = () => {
       getData();
     }, []);
 
-    const prodList = data
 
-    console.log(prodList)
+    const prodList = data
 
 
 	return (
-		<Router>
+        <Database.Provider value={prodList}>
 
-			<Header />
-			
-			<main className="products">
-				<Switch>
-                    <Route exact path="/">  <ProdListShop  productList={prodList} type={"Shop List"}  /> </Route>
-					<Route path="/men">     <ProdListShop  productList={prodList} type={"Men"}   /> </Route>
-					<Route path="/women">   <ProdListShop  productList={prodList} type={"Women"} /> </Route>
-					<Route path="/kids">    <ProdListShop  productList={prodList} type={"Kids"}  /> </Route>
-                    <Route path="/product/:slug"> <PageProduct   productList={prodList} /> </Route>
-                    <Route path="*" component={Page404} />
-				</Switch>				
-			</main>
-			
-			<Footer />
+            <Router>
+                <Header />
+                <main className="products">
+                    <Switch>
+                        <Route exact path="/">  <ProdListShop  type={"Shop List"}  /> </Route>
+                        <Route path="/men">     <ProdListShop  type={"Men"}   />      </Route>
+                        <Route path="/women">   <ProdListShop  type={"Women"} />      </Route>
+                        <Route path="/kids">    <ProdListShop  type={"Kids"}  />      </Route>
+                        <Route path="/product/:slug"> <PageProduct /> </Route>
+                        <Route path="*" component={Page404} />
+                    </Switch>				
+                </main>
+                <Footer />
+            </Router>
 
-		</Router>
+        </Database.Provider>
 	)
 }
 

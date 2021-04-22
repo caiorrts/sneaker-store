@@ -1,9 +1,13 @@
-import React from 'react'
+//import React from 'react'
+import React, {useContext} from 'react'
+import {Database} from 'components/Context'
 import {useParams} from 'react-router-dom'
 import 'css/PageProduct.css'
 
-const PageProduct = ({productList}) => {
+const PageProduct = () => {
     
+    let productList = useContext(Database)
+
     const {slug} = useParams()
 
     const prod = productList.find((prod) => prod.slug === slug) || productList[0]

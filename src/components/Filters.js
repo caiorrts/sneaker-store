@@ -4,10 +4,6 @@ import 'css/Filter.css'
 
 const Filters = () => {
     
-    const filterColor = document.getElementsByName("color")
-
-    console.log('Color: ', filterColor)
-
     return (
         <form className="filters">
             <h2>Filters</h2>

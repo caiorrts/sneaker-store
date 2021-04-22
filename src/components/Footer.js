@@ -5,7 +5,12 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
+
+
 const Footer = () => {
+
+    // console.log(useContext(searchText))
+
     return (
         <footer className="page-footer">
             <ul className="social">
@@ -39,8 +44,10 @@ const Footer = () => {
                 </ul>
             </nav>
             <p className="copyright">&copy; Copyright, Sneaker Store 2021.</p>
+            {/* <h1>{useContext(searchText)}</h1> */}
         </footer>
     )
+
 }
 
 export default Footer

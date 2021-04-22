@@ -1,9 +1,16 @@
-import React from 'react'
+//import React from 'react'
+import React, {useContext} from 'react'
+import {Database} from 'components/Context'
 import { Link } from 'react-router-dom'
 import 'css/ProdListShop.css'
 import Filters from 'components/Filters'
 
-const ProdListShop = ({productList, type}) => {
+
+const ProdListShop = ({type}) => {
+
+    let productList = useContext(Database)
+
+    //console.log('data >> ', data)
 
     let allList = ""
 
