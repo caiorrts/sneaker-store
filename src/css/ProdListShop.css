@@ -12,9 +12,63 @@
     background-color: aqua;
 }
 
-.product div div {
-    margin-left: 0;
-    height: 50px;
+.product {
+    padding: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+}
+
+.product:hover {
+    transform: scale(1.04);
+    -webkit-transform: scale(1.04);
+    -moz-transform: scale(1.04);
+    -ms-transform: scale(1.04);
+    -o-transform: scale(1.04);
+}
+
+.prod-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.prod-name div {
+    font-size: 1.2rem;
+}
+
+.prod-name h3 {
+    padding: 10px 0 10px 0;
+}
+
+.product data {
+    font-size: 1.2rem;
+    padding: 0 10px;
+}
+
+.product data div {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.prod-info span {
+    font-size: 1.1rem;
+    background-color: var(--color-grey-light);
+    padding: 7px 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 
 .product label {
@@ -33,21 +87,25 @@
 
 .product p {
     color: var(--color-black);
+    padding: 10px;
+    height: 60px;
+    
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .product a {
+    font-size: 1rem;
     background-color: var(--color-black);
     color: var(--color-white);
     cursor: pointer;
-    margin-left: 20px;
-    padding: 10px 10px;
+    padding: 10px;
     border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
-
-/* .product img {
-    width: 100vw;
-    
-} */
 
 .prod-img {
     width: 100%;
@@ -58,7 +116,7 @@
 }
 
 .product footer {
-    border-bottom: 1px solid var(--color-grey);
+    /* border-bottom: 1px solid var(--color-grey); */
     padding-bottom: 10px;
     margin-bottom: 20px;
 }

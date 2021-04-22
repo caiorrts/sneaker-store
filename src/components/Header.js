@@ -11,6 +11,8 @@ import SvgIcon from '@material-ui/core/SvgIcon';
 
 const Header = () => {
 
+	
+
     return (
         <header className="page-header">
 			<Link to="/" className="logo"> <img src={imglogo} alt="website logo" /> </Link>
@@ -37,7 +39,7 @@ const Header = () => {
 
 			<form className="search">
 				<label for="find" aria-label="Search"></label>
-				<input type="search" name="find" id="find" placeholder="Search..." />
+				<input type="search" name="find" id="find" placeholder="Search..." onChange={event => getSearch(event.target.value)} />
 				<button type="submit" aria-label="findsubmit">
 					<SearchIcon aria-label="search">
 						<SvgIcon>
@@ -67,6 +69,10 @@ const Header = () => {
 
 		</header>
     )
+
+	function getSearch(text) {
+		console.log('TEXT: ', text)
+	}
 }
 
 export default Header

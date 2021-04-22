@@ -1,12 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import 'css/ProdList.css'
-
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import SvgIcon from '@material-ui/core/SvgIcon';
+import 'css/ProdListShop.css'
+import Filters from 'components/Filters'
 
 const ProdListShop = ({productList, type}) => {
+
     let allList = ""
 
     if (type === "Shop List") {
@@ -20,39 +18,29 @@ const ProdListShop = ({productList, type}) => {
 
     const products = allList.map((s) => 
 
+        <Link to={`/product/${s.slug}`}>
         <article className="product">
             <header>
                 <div className="prod-img" style={{backgroundImage: `url("${s.image}")`}} />
-                <h3><Link to={`/product/${s.slug}`} > {s.name} </Link></h3>
+                <div className="prod-name">
+                    <h3><Link to={`/product/${s.slug}`} > {s.name} </Link></h3>
+                    <div> <b> {s.price} </b> </div>
+                </div>
                 <data value={s.price}>
-                    <ins>{s.price}</ins> <br/>
-                    <ins>{s.color}</ins> <br/>
-                    <ins>{s.size}</ins>
+                    <div className="prod-info"> Color: <span>{s.color}</span> </div>
+                    <div className="prod-info"> Size: <span>{s.size}</span> </div>
                 </data>
                 <p>{s.desc}</p>
             </header>
-            <footer>
-                <button type="button">
-                    <AddShoppingCartIcon aria-label="AddCart">
-                        <SvgIcon>
-                            <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
-                        </SvgIcon>
-					</AddShoppingCartIcon> 
-                </button>
-                <button type="button">
-                    <FavoriteIcon aria-label="Favorite">
-                        <SvgIcon>
-                            <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
-                        </SvgIcon>
-					</FavoriteIcon> 
-                </button>
-            </footer>
         </article>
-
+        
+        </Link>
     )
-    
+
     return (
         <>
+            <Filters />
+            
             <section className="results">
                 <h2 className="subheading">{type}</h2>
                 {products}

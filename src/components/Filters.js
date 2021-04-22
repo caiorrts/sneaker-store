@@ -1,27 +1,29 @@
 import React from 'react'
 import 'css/Filter.css'
-// import StarIcon from '@material-ui/icons/Star';
-// import SvgIcon from '@material-ui/core/SvgIcon';
 
 
 const Filters = () => {
+    
+    const filterColor = document.getElementsByName("color")
+
+    console.log('Color: ', filterColor)
+
     return (
         <form className="filters">
             <h2>Filters</h2>
 
             <div className="filter-options">
-
                 <fieldset>
-                    <legend>Colour</legend>
+                    <legend>Color</legend>
                     <ul className="filter-list">
-                        <li> <input type="checkbox" name="colour" value="black" id="black"   /> <label for="black">Black</label>   </li>
-                        <li> <input type="checkbox" name="colour" value="white" id="white"   /> <label for="white">White</label>   </li>
-                        <li> <input type="checkbox" name="colour" value="grey"  id="grey"    /> <label for="grey">Grey</label>     </li>
-                        <li> <input type="checkbox" name="colour" value="red"   id="red"     /> <label for="red">Red</label>       </li>
-                        <li> <input type="checkbox" name="colour" value="blue"  id="blue"    /> <label for="blue">Blue</label>     </li>
-                        <li> <input type="checkbox" name="colour" value="green" id="green"   /> <label for="green">Green</label>   </li>
-                        <li> <input type="checkbox" name="colour" value="yellow" id="yellow" /> <label for="yellow">Yellow</label> </li>
-                        <li> <input type="checkbox" name="colour" value="orange" id="orange" /> <label for="orange">Orange</label> </li>
+                        <li> <input type="checkbox" name="color" value="black" id="black"   /> <label for="black">Black</label>   </li>
+                        <li> <input type="checkbox" name="color" value="white" id="white"   /> <label for="white">White</label>   </li>
+                        <li> <input type="checkbox" name="color" value="grey"  id="grey"    /> <label for="grey">Grey</label>     </li>
+                        <li> <input type="checkbox" name="color" value="red"   id="red"     /> <label for="red">Red</label>       </li>
+                        <li> <input type="checkbox" name="color" value="blue"  id="blue"    /> <label for="blue">Blue</label>     </li>
+                        <li> <input type="checkbox" name="color" value="green" id="green"   /> <label for="green">Green</label>   </li>
+                        <li> <input type="checkbox" name="color" value="yellow" id="yellow" /> <label for="yellow">Yellow</label> </li>
+                        <li> <input type="checkbox" name="color" value="orange" id="orange" /> <label for="orange">Orange</label> </li>
                     </ul>
                 </fieldset>
 
@@ -40,18 +42,26 @@ const Filters = () => {
                         <li><input type="checkbox" name="size" value="14" id="14" /> <label for="14">14</label></li>
                     </ol>
                 </fieldset>
-
-
-                <fieldset className="sort">
-                    <label for="sort">Sort By</label>
-                    <select name="sort" id="sort">
-                        <option value="price-high">Price: High-Low</option>
-                        <option value="price-low">Price: Low-High</option>
-                        <option value="newest">Newest</option>
-                    </select>
+                
+                <fieldset>
+                    <legend>Brands</legend>
+                    <ol className="filter-list">
+                        <li><input type="checkbox" name="brand" value="Nike"        id="Nike"       /> <label for="Nike"        > Nike   </label></li>
+                        <li><input type="checkbox" name="brand" value="Adidas"      id="Adidas"     /> <label for="Adidas"      > Adidas </label></li>
+                        <li><input type="checkbox" name="brand" value="Puma"        id="Puma"       /> <label for="Puma"        > Puma   </label></li>
+                        <li><input type="checkbox" name="brand" value="Under Armor" id="Under-Armor"/> <label for="Under Armor" > Under Armor </label></li>
+                    </ol>
                 </fieldset>
-
             </div>
+
+            <fieldset className="sort">
+            <label for="sort">Sort By</label>
+            <select name="sort" id="sort">
+                <option value="price-high">Price: High-Low</option>
+                <option value="price-low">Price: Low-High</option>
+                <option value="newest">Newest</option>
+            </select>
+            </fieldset>
         </form>
     )
 }
