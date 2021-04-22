@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --mode development --history-api-fallback",
     "build": "webpack --mode production",
-    "deploy": " npm run build; netlify deploy --prod --dir=dist"
+    "deploy": " npm run build; netlify deploy --prod --dir=dist",
+    "git": "git add .; git commit -m 'Project update.'; git push --all"
   },
   "repository": {
     "type": "git",
